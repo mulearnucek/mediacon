@@ -49,11 +49,11 @@ const AboutSection: Component = () => {
           <TextCombo className="text-center" theme="white" header="What if?" sub="" />
           
           <div class="flex items-center justify-center ">
-            <img src="ctlg.svg" alt="" class="w-[30rem]" />
-            <p class="font-semibold text-yellow-500 text-3xl">X</p>
-            <img src="mu.svg" alt="" class="w-[13rem] h-[13rem]" />
+            <img src="ctlg.svg" alt="" class="md:w-[30rem] w-[10rem]" />
+            <p class="font-semibold text-yellow-500 md:text-3xl text-2xl">X</p>
+            <img src="mu.svg" alt="" class="md:w-[13rem] md:h-[13rem] w-[3rem]" />
           </div>
-          <img src="mediacon.png" alt="" class="w-[30rem] absolute top-44 blur-md hover:blur-sm" />
+          <img src="mediacon.png" alt="" class="md:w-[30rem] w-[20rem] absolute top-44 blur-md hover:blur-sm" />
         </div>
       </DottedGridBackground>
     </section>
