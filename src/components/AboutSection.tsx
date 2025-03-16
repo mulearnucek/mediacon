@@ -37,7 +37,22 @@ const AboutSection: Component = () => {
 
   return (
     <section class="h-screen about bg-white text-tedx-black">
-      
+      <div class="grid grid-cols-1 lg:grid-cols-2 h-full max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-16 z-10">
+        <div class="flex flex-col justify-center h-full -space-y-3">
+          <div class="grid grid-cols-3 gap-6 justify-center">
+            <For each={cardData().slice(3)}>{(card, index) => <Card {...card} index={index() + 3} />}</For>
+          </div>
+          <div class="grid grid-cols-3 gap-6">
+            <For each={cardData().slice(0, 3)}>{(card, index) => <Card {...card} index={index()} />}</For>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center h-full">
+          <TextCombo className="text-end " theme="black" header="What is Ted X?" sub="Unlike TED itself, which hosts annual global conferences, TEDx events are local and community-driven,
+            allowing for a wide range of topics, from technology and entertainment to education, personal development,
+            and social issues. Each TEDx event follows guidelines set by TED but has its own unique theme and
+            speakers, making every event distinct and relevant to its specific audience." />
+        </div>
+      </div>
     </section>
   );
 };
