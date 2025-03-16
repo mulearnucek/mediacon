@@ -10,6 +10,7 @@ import about4 from "@/assets/about4.jpeg";
 import about5 from "@/assets/about5.jpg";
 import about6 from "@/assets/about6.webp";
 import { TextCombo } from "./header";
+import DashedDottedGrid from "./DashedDottedGrid";
 
 const cardData = createMemo(() => [
   { title: "History", color: "bg-[#090806]", textColor: "text-[#D3D3CB]", img: about5 },
@@ -30,30 +31,31 @@ const AboutSection: Component = () => {
         stagger: 0.2,
         duration: 0.8,
         ease: "power3.out",
-        scrollTrigger: ".about"
+        scrollTrigger: ".about",
       }
     );
   });
 
   return (
-    <section class="h-screen about bg-white text-tedx-black">
-      <div class="grid grid-cols-1 lg:grid-cols-2 h-full max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-16 z-10">
-        <div class="flex flex-col justify-center h-full -space-y-3">
-          <div class="grid grid-cols-3 gap-6 justify-center">
-            <For each={cardData().slice(3)}>{(card, index) => <Card {...card} index={index() + 3} />}</For>
-          </div>
-          <div class="grid grid-cols-3 gap-6">
-            <For each={cardData().slice(0, 3)}>{(card, index) => <Card {...card} index={index()} />}</For>
-          </div>
+    <section class="h-screen about bg-black text-tedx-black">
+      <DottedGridBackground
+        gridSize={100}
+        dashArray="15"
+        dotSize={2}
+        dotColor="white"
+        class="min-h-screen bg-black text-tedx-black flex flex-col justify-center items-center"
+      >
+        <div class="flex flex-col justify-center items-center h-full ">
+          <TextCombo className="text-center" theme="white" header="What if?" sub="" />
           
+          <div class="flex items-center justify-center ">
+            <img src="ctlg.svg" alt="" class="w-[30rem]" />
+            <p class="font-semibold text-yellow-500 text-3xl">X</p>
+            <img src="mu.svg" alt="" class="w-[13rem] h-[13rem]" />
+          </div>
+          <img src="mediacon.png" alt="" class="w-[30rem] absolute top-44 blur-md hover:blur-sm" />
         </div>
-        <div class="flex flex-col justify-center h-full">
-          <TextCombo className="text-end " theme="black" header="What is Ted X?" sub="Unlike TED itself, which hosts annual global conferences, TEDx events are local and community-driven,
-            allowing for a wide range of topics, from technology and entertainment to education, personal development,
-            and social issues. Each TEDx event follows guidelines set by TED but has its own unique theme and
-            speakers, making every event distinct and relevant to its specific audience." />
-        </div>
-      </div>
+      </DottedGridBackground>
     </section>
   );
 };
@@ -83,12 +85,7 @@ function Card({
       >
         {title}
       </h3>
-      <img
-        src={img}
-        alt={title}
-        class="w-full object-cover shadow-sm aspect-square"
-        draggable={false}
-      />
+      <img src={img} alt={title} class="w-full object-cover shadow-sm aspect-square" draggable={false} />
     </div>
   );
 }

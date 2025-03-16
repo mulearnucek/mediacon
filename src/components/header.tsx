@@ -8,7 +8,7 @@ export const TextCombo = ({ header, sub, theme, className }: { header: string, s
         <div class={cn("text-start", className)}>
             <Text coloring={theme} size={"h2"} variant={"tedx"}>
                 {first}
-                <span class="text-tedx">{last}</span>
+                <span class="text-[#F9BE08]">{last}</span>
             </Text>
             <Text class="text-balance opacity-75 max-w-2xl" coloring={theme} size={"p"} variant={"tedx-sub"}>{sub}</Text>
         </div>
