@@ -45,6 +45,7 @@ const AboutSection: Component = () => {
           <div class="grid grid-cols-3 gap-6">
             <For each={cardData().slice(0, 3)}>{(card, index) => <Card {...card} index={index()} />}</For>
           </div>
+          
         </div>
         <div class="flex flex-col justify-center h-full">
           <TextCombo className="text-end " theme="black" header="What is Ted X?" sub="Unlike TED itself, which hosts annual global conferences, TEDx events are local and community-driven,
