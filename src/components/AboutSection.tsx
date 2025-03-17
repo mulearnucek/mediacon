@@ -11,6 +11,7 @@ import about5 from "@/assets/about5.jpg";
 import about6 from "@/assets/about6.webp";
 import { TextCombo } from "./header";
 import DashedDottedGrid from "./DashedDottedGrid";
+import { Button } from "./ui/button";
 
 const cardData = createMemo(() => [
   { title: "History", color: "bg-[#090806]", textColor: "text-[#D3D3CB]", img: about5 },
@@ -45,15 +46,18 @@ const AboutSection: Component = () => {
         dotColor="white"
         class="min-h-screen bg-black text-tedx-black flex flex-col justify-center items-center"
       >
-        <div class="flex flex-col justify-center items-center h-full ">
-          <TextCombo className="text-center" theme="white" header="What if?" sub="" />
-          
-          <div class="flex items-center justify-center ">
-            <img src="ctlg.svg" alt="" class="md:w-[30rem] w-[10rem]" />
-            <p class="font-semibold text-yellow-500 md:text-3xl text-2xl">X</p>
-            <img src="mu.svg" alt="" class="md:w-[13rem] md:h-[13rem] w-[3rem]" />
-          </div>
-          <img src="mediacon.png" alt="" class="md:w-[30rem] w-[20rem] absolute top-44 blur-md hover:blur-sm" />
+        <div class="flex flex-col items-center justify-center w-full h-full">
+          <img src="mediacon.png" alt="" class="md:w-[30rem] w-[20rem]" />
+          {/* <div class="flex items-center h-full w-full">
+            <img src="ctlg.svg" alt="" class="md:w-[10rem] w-[5rem]" />
+            <p class="font-semibold text-yellow-500">X</p>
+            <img src="mu.svg" alt="" class="md:w-[3rem] md:h-[3rem] w-[3rem]" />
+          </div> */}
+          <a href="upi://pay?pa=lchethas@oksbi&pn=CTLG%20&%20Mulearn&cu=INR&am=200" class="mt-4">
+            <Button class="mt-4">
+              Register
+            </Button>
+          </a>
         </div>
       </DottedGridBackground>
     </section>

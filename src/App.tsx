@@ -17,6 +17,12 @@ gsap.registerPlugin(Observer);
 const AnimatedSections = () => {
   const [showTedxLogo, setShowTedxLogo] = createSignal(true);
 
+  // useEffect(() => {
+  //   if(localStorage.get("logoAnim") === "true") {
+  //     setShowTedxLogo(false);
+  //   }
+  // });
+
   return (
     <div class="h-screen w-screen bg-black text-white overflow-y-auto overflow-x-hidden">
       {showTedxLogo() ? (
@@ -24,6 +30,7 @@ const AnimatedSections = () => {
           <TedxLogo
             onComplete={() => {
               setShowTedxLogo(false);
+              localStorage.set("logoAnim", "true");
             }}
           />
         </div>
@@ -45,3 +52,7 @@ const AnimatedSections = () => {
 };
 
 export default AnimatedSections;
+function useEffect(arg0: () => void) {
+  throw new Error("Function not implemented.");
+}
+
